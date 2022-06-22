@@ -1,0 +1,47 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}TabCoach index{% endblock %}
+
+
+{% block body %}
+    <h1>TabCoach index</h1>
+    {% for message in app.flashes('info') %}
+<div class="alert alert-succes" style="background-color: #00FA9A;text-align:center;font-size:35px;margin: 25px 100px ;">
+{{ message }}
+</div>
+{% endfor %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdCoach</th>
+                <th>NomCoach</th>
+                <th>Specialite</th>
+                <th>Mail</th>
+                <th>MdpCoach</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tab_coach in tab_coaches %}
+            <tr>
+                <td>{{ tab_coach.idCoach }}</td>
+                <td>{{ tab_coach.nomCoach }}</td>
+                <td>{{ tab_coach.specialite }}</td>
+                <td>{{ tab_coach.mail }}</td>
+                <td>{{ tab_coach.mdpCoach }}</td>
+                <td>
+                    <a href="{{ path('app_tab_coach_show', {'idCoach': tab_coach.idCoach}) }}">show</a>
+                    <a href="{{ path('app_tab_coach_edit', {'idCoach': tab_coach.idCoach}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tab_coach_new') }}">Create new</a>
+{% endblock %}

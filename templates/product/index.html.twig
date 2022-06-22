@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <!-- our protien  -->
+
+
+       
+                     <h2>Our Protien</h2>
+                  
+  {% for produit in produits %}
+
+                      <a class="lightbox" href="{{ asset('uploads/' ~ produit.image)  }}">
+                     <figure><img src="{{ asset('uploads/' ~ produit.image) }}" alt="#"/></figure>
+                     <h3> {{ produit.price  }} TND</h3>
+                     <h4> </h4>
+                      <a href="{{path("add", {id: produit.id})}}"{id: produit.id}" class=" ">
+                        <i class="bi bi-cart-plus"></i> BuyNow  </div>
+               </div>
+               
+      <!-- end our protien  -->
+      {% endfor %}
+      <div class ="navigation"> 
+      {{ knp_pagination_render(produits,'pagination.html.twig') }}
+
+      </div>
+
+ {% endblock %}
+
+
+

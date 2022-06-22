@@ -1,0 +1,38 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}TabCoach{% endblock %}
+
+{% block body %}
+    <h1>TabCoach</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCoach</th>
+                <td>{{ tab_coach.idCoach }}</td>
+            </tr>
+            <tr>
+                <th>NomCoach</th>
+                <td>{{ tab_coach.nomCoach }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ tab_coach.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ tab_coach.mail }}</td>
+            </tr>
+            <tr>
+                <th>MdpCoach</th>
+                <td>{{ tab_coach.mdpCoach }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tab_coach_index') }}">back to list</a>
+
+    <a href="{{ path('app_tab_coach_edit', {'idCoach': tab_coach.idCoach}) }}">edit</a>
+
+    {{ include('tab_coach/_delete_form.html.twig') }}
+{% endblock %}

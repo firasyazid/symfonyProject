@@ -1,0 +1,38 @@
+
+
+  <title>Materiel</title>
+
+
+    <h1>Materiel</h1>
+    
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                                            <th>Id</th>
+                                            <th>Nom</th>
+                                            <th>Prix</th>
+                                             <th>Etat</th>
+                                          
+                                           
+            </tr>
+        </thead>
+        <tbody>
+        {% for m in Materiel %}
+            <tr>
+             
+                                    <td>{{m.id}}</td>
+                                    <td>{{m.nom}}</td>
+                                    <td> {{m.prix}}</td>
+                                    <td> {{m.etat}}</td>
+                                   
+               
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+

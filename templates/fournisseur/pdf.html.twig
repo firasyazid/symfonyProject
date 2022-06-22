@@ -1,0 +1,38 @@
+
+
+  <title>Fournisseur</title>
+
+
+    <h1>Fournisseur</h1>
+    
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                                            <th>Id</th>
+                                            <th>Nom</th>
+                                            <th>Adresse</th>
+                                             <th>Numtel</th>
+                                          
+                                           
+            </tr>
+        </thead>
+        <tbody>
+        {% for f in Fournisseur %}
+            <tr>
+             
+                                    <td>{{f.id}}</td>
+                                    <td>{{f.nom}}</td>
+                                    <td> {{f.adresse}}</td>
+                                    <td> {{f.numtel}}</td>
+                                   
+               
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+

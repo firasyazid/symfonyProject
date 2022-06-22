@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+
+
+<style>
+    .boxtttt{
+
+        transition: 1s;
+
+    }
+    .boxtttt img{
+        display: block;
+        border-radius: 5px;
+    }
+    .boxtttt:hover{
+        transform: scale(1.3);
+        z-index: 2;
+    }
+</style>
+<br> <br>
+
+
+
+<section class="food_section layout_padding">
+
+
+    <div class="container">
+
+
+        <div class="heading_container heading_center">
+            <h2> Nos materiels </h2>
+        </div>
+
+
+
+        <br><br><br>
+        <br><br>
+        <section class="home-about-area">
+
+            <div class="container-fluid">
+                <div class="row justify-content-center align-items-center">
+                    {% for m in materiels %}
+                        <div class="col-lg-6 no-padding home-about-left">
+                            <div class="boxtttt">
+                                <img  src="/uploads/{{m.image}}" id="img"  alt="Image"
+                                      style =" width : 200px  ">   <br><br>  <br><br>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 no-padding home-about-right">
+                            <h1 style="margin-left:10% ; margin-top:-20%">{{m.nom}}</h1>
+                            <a style="margin-left:10%">{{m.prix}} </a> <br>
+                            <a style="margin-left:10%">{{m.etat}}</a>  <br>
+
+
+                        </div>
+
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+    </div>
+</section>
+    <div class="container py-5">
+        <div class="d-flex justify-content-center">
+
+            {{ knp_pagination_render(materiels) }}
+        </div>
+    </div>
+
+{% endblock %}

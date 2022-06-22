@@ -1,0 +1,43 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}TabSeance index{% endblock %}
+
+{% block body %}
+    <h1>TabSeance index</h1>
+{% for message in app.flashes('info') %}
+<div class="alert alert-succes" style="background-color: #00FA9A;text-align:center;font-size:35px;margin: 25px 100px ; ">
+{{ message }}
+</div>
+{% endfor %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdSeance</th>
+                <th>TypeSeance</th>
+                <th>DateDebut</th>
+                <th>DateFin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tab_seance in tab_seances %}
+            <tr>
+                <td>{{ tab_seance.idSeance }}</td>
+                <td>{{ tab_seance.typeSeance }}</td>
+                <td>{{ tab_seance.dateDebut }}</td>
+                <td>{{ tab_seance.dateFin }}</td>
+                <td>
+                    <a href="{{ path('app_tab_seance_show', {'idSeance': tab_seance.idSeance}) }}">show</a>
+                    <a href="{{ path('app_tab_seance_edit', {'idSeance': tab_seance.idSeance}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_tab_seance_new') }}">Create new</a>
+{% endblock %}

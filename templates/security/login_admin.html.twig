@@ -1,0 +1,105 @@
+{% block body %}
+
+
+	<html>
+		<body>
+			<div class="login-box">
+				<div class="user-box">
+					<h2>Admin login</h2>
+					<form>
+						<p>Enter your Email</p>
+						<div>
+							<input id="email" type="text"/>
+						</div>
+						<div>
+							<p>Enter your Password</p>
+							<input id="password" type="password"/>
+						</div>
+						<div>
+							<input id="btnlogin" class="botao-calcular" type="button" value="log in !"/>
+						</div>
+					</form>
+					<h1>
+						<div id="resultado"></div>
+					</h1>
+				</div>
+			</div>
+		</body>
+	</html>
+
+<script>
+let botaoCalcular = document.getElementById('btnlogin');
+function check_admin()
+{
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+let resultado = document.getElementById("resultado");
+
+if ((email == "admin@gymplus.com") && (password == "admin")) {
+resultado.textContent = "Welcome admin !"
+// Simulate a mouse click:
+window.location.href = "/dashboard";
+}
+
+if ((email == "") || (password == "")) {
+resultado.textContent = "please fill in all the required fields !"}
+
+else {resultado.textContent = "Check your informations !"}
+
+}
+botaoCalcular.addEventListener('click', check_admin);
+	</script>
+
+
+	<style>
+		.botao-calcular {
+			font-align: center;
+			font-size: 18px;
+			width: 100%;
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #1b2845;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+
+
+	<style>
+		html {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background: linear-gradient(#141e30, #243b55);
+		}
+
+		.login-box {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 400px;
+			padding: 40px;
+			transform: translate(-50%, -50%);
+			background: rgba(0, 0, 0, .5);
+			box-sizing: border-box;
+			box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+			border-radius: 10px;
+		}
+
+		.login-box h2 {
+			margin: 0 0 30px;
+			padding: 0;
+			color: #fff;
+			text-align: center;
+		}
+
+		.login-box .user-box {
+			position: relative;
+		}
+	</style>
+
+
+{% endblock %}

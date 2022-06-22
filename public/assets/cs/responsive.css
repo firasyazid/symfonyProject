@@ -1,0 +1,193 @@
+
+
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media (min-width: 1200px) and (max-width: 1342px) {
+    .header_top {
+        padding: 35px 70px;
+    }
+    .banner_text h1 {
+        font-size: 61px;
+    }
+    .get_btn {
+        max-width: 184px;
+    }
+    .body_img::before {
+        left: 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header_top {
+        padding: 35px 70px;
+    }
+    .get_btn {
+        max-width: 141px;
+    }
+    .banner_text h1 {
+        font-size: 48px;
+        line-height: 66px;
+    }
+    .banner_text {
+        margin-top: 45%;
+    }
+    .growyhing .titlepage h2 {
+        font-size: 45px;
+        line-height: 74px;
+    }
+    .body_img::before {
+        left: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header_top {
+        padding: 35px 70px;
+    }
+    .banner_text {
+        margin-top: 45%;
+    }
+    .bann_img {
+        height: 460px;
+    }
+    .banner_text h1 {
+        font-size: 34px;
+        line-height: 52px;
+    }
+    .get_btn {
+        max-width: 105px;
+        font-size: 12px;
+        padding: 8px 0;
+        margin-right: 2px;
+        height: 42px;
+    }
+    .growyhing .titlepage h2 {
+        font-size: 38px;
+        line-height: 59px;
+        margin-bottom: 26px;
+    }
+    .relative2 span {
+        padding-left: 1px;
+    }
+    .variat {
+        padding-right: 0;
+    }
+    .body_img::before {
+        left: 0;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .header_top {
+        padding: 35px 70px;
+    }
+    .banner_text {
+        margin-top: 34%;
+        margin-bottom: 0;
+        max-width: 543px;
+    }
+    .bann_img {
+        height: 460px;
+        padding-left: 62px;
+    }
+    .variat {
+        padding-right: 0;
+    }
+    .body_img::before {
+        left: 0;
+    }
+    .about_img {
+        margin-top: 30px;
+    }
+    .body_blu_img {
+        max-width: inherit;
+        padding-bottom: 30px;
+    }
+    .growyhing .titlepage h2 {
+        font-size: 54px;
+        line-height: 84px;
+        margin-top: 30px;
+    }
+    ul.conta {
+        display: block !important;
+    }
+    ul.link_menu {
+        margin-bottom: 20px;
+    }
+    .variat {
+        padding-bottom: 20px;
+    }
+    ul.conta li {
+        display: block;
+    }
+    .body_blu_img {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 575px) {
+    .logo {
+        text-align: center !important;
+        padding-bottom: 6px;
+        float: left;
+    }
+    .header_top {
+        padding: 35px 70px;
+    }
+    .banner_text {
+        margin-top: 62%;
+        margin-bottom: 0;
+    }
+    .bann_img {
+        height: 240px;
+        padding-left: 62px;
+    }
+    .banner_text h1 {
+        font-size: 31px;
+        line-height: 44px;
+    }
+    .get_btn {
+        max-width: 107px;
+        font-size: 12px;
+        padding: 8px 0;
+        height: 40px;
+        margin-right: 0px;
+    }
+    .body_img::before {
+        left: 0;
+    }
+    .titlepage h2 {
+        font-size: 29px;
+    }
+    .growyhing .titlepage h2 {
+        font-size: 27px;
+        line-height: 39px;
+        margin-top: 30px;
+        margin-bottom: 26px;
+    }
+    .body_blu_img {
+        margin-bottom: 30px;
+    }
+    .about_img {
+        margin-top: 30px;
+    }
+    .relative2 span {
+        padding-left: 0px;
+    }
+    .relative2 {
+        padding: 0px 4px 0px 70px;
+    }
+    ul.link_menu {
+        margin-bottom: 20px;
+    }
+    ul.conta,
+    ul.conta li {
+        display: block !important;
+    }
+    .variat {
+        padding-bottom: 20px;
+    }
+}

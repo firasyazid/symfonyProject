@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Abonnement index{% endblock %}
+
+{% block body %}
+
+	<!-- Pricing Section Begin -->
+	<section class="pricing-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title">
+						<span>Our Plan</span>
+						<h2>Choose your pricing plan</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				{% for abonnement in abonnements %}
+					<div class="col-lg-4 col-md-8">
+						<div class="ps-item">
+							<h3>{{ abonnement.nomAb }}</h3>
+							<div class="pi-price">
+								<h2>{{ abonnement.prixAb }}DT</h2>
+								<span>/ 1MONTH</span>
+							</div>
+							<ul>
+								<li> Subscription description </li>
+								<li>{{ abonnement.description }}</li>
+							</ul>
+							<a href="#" class="primary-btn pricing-btn">Enroll now</a>
+								<i class="fa fa-picture-o"></i>
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+	<!-- Pricing Section End -->
+{% endblock %}

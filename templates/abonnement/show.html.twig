@@ -1,0 +1,34 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Abonnement{% endblock %}
+
+{% block body %}
+    <h1>Abonnement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdAbonnement</th>
+                <td>{{ abonnement.idAbonnement }}</td>
+            </tr>
+            <tr>
+                <th>NomAb</th>
+                <td>{{ abonnement.nomAb }}</td>
+            </tr>
+            <tr>
+                <th>PrixAb</th>
+                <td>{{ abonnement.prixAb }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ abonnement.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_abonnement_index') }}">back to list</a>
+
+    <a href="{{ path('app_abonnement_edit', {'idAbonnement': abonnement.idAbonnement}) }}">edit</a>
+
+    {{ include('abonnement/_delete_form.html.twig') }}
+{% endblock %}

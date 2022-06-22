@@ -1,0 +1,18 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Edit TabCoach{% endblock %}
+
+{% block body %}
+    <h1>Edit TabCoach</h1>
+    {% for message in app.flashes('info') %}
+<div class="alert alert-danger"  style="background-color: #00BFFF;text-align:center;font-size:35px;margin: 25px 100px ;">
+{{ message }}
+</div>
+{% endfor %}
+
+    {{ include('tab_coach/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_tab_coach_index') }}">back to list</a>
+
+    {{ include('tab_coach/_delete_form.html.twig') }}
+{% endblock %}

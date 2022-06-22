@@ -1,0 +1,11 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}New TabCoach{% endblock %}
+
+{% block body %}
+    <h1>Create new TabCoach</h1>
+
+    {{ include('tab_coach/_form.html.twig') }}
+
+    <a href="{{ path('app_tab_coach_index') }}">back to list</a>
+{% endblock %}

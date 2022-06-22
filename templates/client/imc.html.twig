@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<html>
+  <head></head>
+  <body>
+    <div class="container">
+      <h1>IMC Calculator</h1>
+      <form>
+        <p>Enter your weight</p>
+        <div>
+          <input id="peso" type="number"/>
+          <span>Kg</span>
+        </div>
+        <div>
+          <p>Enter your height</p>
+          <input id="altura" type="number"/>
+          <span>cm</span>
+        </div>
+        <div>
+          <input id="btnCalcular" class="botao-calcular" type="button" value="SEE YOUR RESULTS" />
+        </div>
+      </form>
+      <h1> <div id="resultado"></div> </h1>
+    </div>
+  </body>
+</html>
+
+<script>
+let botaoCalcular = document.getElementById('btnCalcular');
+function calculandoIMC(){
+  let peso = document.getElementById("peso").value;
+  let altura = document.getElementById("altura").value/100;
+  let resultado = document.getElementById("resultado");
+  
+  if(altura !== "" && peso !== ""){
+    
+    let imc = (peso / (altura * altura)).toFixed(1);
+    let mensagem = "";
+    
+    if(imc < 18.5){
+      mensagem = "Under weight!"
+    }else if(imc < 25){
+      mensagem = "You are at the ideal weight!"
+    }else if( imc < 30){
+      mensagem = "You are slightly overweight!"
+    }else if( imc < 35){
+      mensagem = "Watch out! degree obesity I"
+    }else if( imc < 40){
+      mensagem = "Watch out! degree obesity II"
+    }else {
+      mensagem = "Watch out! degree obesity III"
+    }
+
+    resultado.textContent = `Your IMC: ${imc}=> ${mensagem}`;
+    
+  }else{
+    resultado.textContent = "Fill in all the fields!!!"
+  }
+  
+}
+
+botaoCalcular.addEventListener('click', calculandoIMC);
+</script>
+
+
+<style>
+
+
+.botao-calcular{
+  font-align: center;
+  font-size:18px;
+  width: 100%;
+  margin-top:20px;
+  padding:10px;
+  background-color: #1b2845;
+  color: white;
+  cursor: pointer;
+}
+</style>
+
+
+{% endblock %}

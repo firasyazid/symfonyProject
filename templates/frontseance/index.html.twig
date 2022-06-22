@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+ 
+{% block body %}
+
+{% block stylesheets %}
+        <link href="{{ asset('public/templates/frontseance/style.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+    
+    <table class="table" style="width: 100%; 
+    border: 1px solid;
+    text-align: center;">
+
+
+        <thead style="background-color: #333;
+	color: white;
+	font-size: 0.875rem;
+	letter-spacing: 2%;
+     ">
+            <tr>
+                <th>Type</th>
+                <th>Heure Debut</th>
+                <th>Heure Fin</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+       
+        {% for TabSeance in TabSeances %}
+            <tr style="background-color: #333;
+	color: white;
+	font-size: 0.875rem;
+	letter-spacing: 2%; ">
+                <td>{{ TabSeance.typeSeance }}</td>
+                <td>{{ TabSeance.dateDebut }}</td>
+                <td>{{ TabSeance.dateFin }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %} 
+
+        </tbody>
+    </table>
+    <div class="navigation" style="text-align:center;">
+            {{ knp_pagination_render(TabSeances) }}
+        </div>
+
+   
+{% endblock %}
+
+

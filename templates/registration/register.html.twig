@@ -1,0 +1,19 @@
+ <meta charset="UTF-8">
+  <title>Gymplus - Signin</title>
+  <link rel="stylesheet" href="style_login.css">
+
+
+{% block body %}
+
+<div class="login-box">
+    <h1>Register</h1>
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.mail) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}

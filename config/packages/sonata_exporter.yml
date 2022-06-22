@@ -1,0 +1,5 @@
+#config/packages/sonata_exporter.yml
+sonata_exporter:
+  writers:
+    csv:
+      delimiter: ";"

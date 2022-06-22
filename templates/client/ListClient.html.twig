@@ -1,0 +1,40 @@
+{% block body %}
+
+	<h1 align="center">
+		GYM+ Clients 
+	</h1>
+
+
+	<!-- Table with stripped rows -->
+	<div class="logo">
+		<a href="">
+			<img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/male3-128.png"></img>
+		</a>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nom</th>
+				<th>Prenom</th>
+				<th>Adresse</th>
+				<th>Mail</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for client in client %}
+				<tr>
+					<td>{{ client.id }}</td>
+					<td>{{ client.nom }}</td>
+					<td>{{ client.prenom }}</td>
+					<td>{{ client.adresse }}</td>
+					<td>{{ client.mail }}</td>
+				</tr>
+
+			{% endfor %}
+		</tbody>
+	</table>
+	<!-- End Table with stripped rows -->
+
+</div></div></div></div></section>{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'base1.html.twig' %}
+
+{% block title %}Materiel index{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('info')%}
+        <div class="alert alert-danger">
+            {{message}}
+        </div>
+    {% endfor %}
+
+    <h1>Materiel index</h1>
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js%22%3E"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js%22%3E"></script>
+        <script type="text/javascript">  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js%22%3E"</script>
+        <script>
+            $(document).ready(function(){
+                $("#search").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+    {% endblock %}
+    <div class="input-group custom-search-form">
+
+        <input type="text" id="search" class="form-control" placeholder="Search here">
+    </div>
+
+
+
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="myTable">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for materiel in materiels %}
+            <tr>
+                <td>{{ materiel.id }}</td>
+                <td>{{ materiel.nom }}</td>
+                <td>{{ materiel.prix }}</td>
+                <td>{{ materiel.etat }}</td>
+                <td>
+                    <a href="{{ path('app_materiel_show', {'id': materiel.id}) }}">show</a>
+                    <a href="{{ path('app_materiel_edit', {'id': materiel.id}) }}">edit</a>
+                    <a href="{{ path('app_materiel_pdf', {'id': materiel.id}) }}">pdf</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <a href="{{ path('app_materiel_new') }}">Create new</a>
+{% endblock %}
